@@ -41,3 +41,6 @@ jobs:
       # run tests!
       #- run: mvn integration-test
       - run: mvn package
+
+    post:
+      - mv target/*.war $CIRCLE_ARTIFACTS/
