@@ -41,7 +41,8 @@ jobs:
       # run tests!
       #- run: mvn integration-test
       - run: mvn package
-
+      - run: mv target/*.war /tmp/artifacts
+      
     #post:
       #- run: mv target/*.war $CIRCLE_ARTIFACTS/
       - store_artifacts:
