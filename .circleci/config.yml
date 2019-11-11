@@ -14,7 +14,8 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/postgres:9.4
 
-    working_directory: ~/repo
+    #working_directory: ~/repo
+    working_directory: ~/webapp
 
     environment:
       # Customize the JVM maximum heap limit
@@ -31,11 +32,12 @@ jobs:
             - v1-dependencies-
 
       - run: mvn dependency:go-offline
-
+      
       - save_cache:
           paths:
             - ~/.m2
           key: v1-dependencies-{{ checksum "pom.xml" }}
 
       # run tests!
-      - run: mvn integration-test
+      #- run: mvn integration-test
+      - run: mvn package
