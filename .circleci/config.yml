@@ -43,4 +43,4 @@ jobs:
       - run: mvn package
 
     #post:
-      - mv target/*.war $CIRCLE_ARTIFACTS/
+      - run: mv target/*.war $CIRCLE_ARTIFACTS/
